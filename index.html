@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="caixa">
+        <img class="img" src="./gat1.png" alt="">
+        <h1 id=título>Você quer sair comigo?</h1>
+        <button id="sim" onclick="ResponderSim()">SIM</button>
+        <button id="não" onclick="ResponderNão()">NÃO</button>
+
+    </div>
+    <script>
+
+        function ResponderSim() {
+            let título = document.getElementById("título")
+            título.innerText = "😘💕❤️👍👍👍"
+
+        }
+        function ResponderNão() {
+            let não = document.getElementById("não")
+            não.style.position = "absolute";
+            não.style.left = Math.random() + 400 + "px";
+            não.style.top = Math.random() + 400 + "px";
+        }
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

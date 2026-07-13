@@ -1,0 +1,153 @@
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ffd6e7,#ffe9f5,#fff8fc);
+    position:relative;
+}
+
+/* Laços espalhados pelo fundo */
+body::before{
+    content:
+    "🎀      🎀        🎀        🎀"
+    "\A"
+    "      🎀      🎀       🎀"
+    "\A"
+    "🎀         🎀       🎀      🎀"
+    "\A"
+    "     🎀         🎀"
+    "\A"
+    "🎀      🎀        🎀        🎀"
+    "\A"
+    "      🎀      🎀       🎀"
+    "\A"
+    "🎀         🎀       🎀      🎀";
+
+    white-space:pre;
+    position:fixed;
+    inset:0;
+    font-size:55px;
+    opacity:.18;
+    line-height:120px;
+    pointer-events:none;
+    z-index:-1;
+    animation:girar 40s linear infinite;
+}
+
+/* Caixa principal */
+.caixa{
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(15px);
+    border:4px solid #ffc6df;
+    border-radius:35px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(255,105,180,.35);
+    animation:aparecer 1s;
+}
+
+/* Imagem */
+.img{
+    width:300px;
+    border-radius:25px;
+    border:8px solid white;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    animation:flutuar 3s ease-in-out infinite;
+}
+
+/* Título */
+h1{
+    margin:25px 0;
+    font-family:'Pacifico',cursive;
+    color:#ff4f9b;
+    font-size:40px;
+    text-shadow:2px 2px 5px white;
+}
+
+/* Botões */
+button{
+    width:140px;
+    height:55px;
+    border:none;
+    border-radius:50px;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    color:white;
+    margin:10px;
+}
+
+#sim{
+    background:linear-gradient(45deg,#ff4fa0,#ff8cc5);
+    box-shadow:0 8px 18px rgba(255,79,160,.4);
+}
+
+#sim:hover{
+    transform:scale(1.1);
+}
+
+#não{
+    background:linear-gradient(45deg,#c36bff,#e0a7ff);
+    box-shadow:0 8px 18px rgba(195,107,255,.4);
+}
+
+#não:hover{
+    transform:scale(1.1);
+}
+
+/* Corações brilhando */
+.caixa::after{
+    content:"💖 ✨ 💕 ✨ 💖";
+    display:block;
+    margin-top:20px;
+    font-size:25px;
+    animation:pulsar 2s infinite;
+}
+
+/* Animações */
+@keyframes flutuar{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes pulsar{
+    50%{
+        transform:scale(1.2);
+    }
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes girar{
+    from{
+        transform:rotate(0deg) scale(1.1);
+    }
+    to{
+        transform:rotate(360deg) scale(1.1);
+    }
+}
